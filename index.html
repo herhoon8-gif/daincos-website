@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D:ain – Calming Blur Cushion</title>
+  <title>D:AIN – Calming Blur Cushion</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -27,7 +27,7 @@
 
     /* ===== NAV ===== */
     nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(250,246,240,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(26,26,26,0.06); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; letter-spacing: 2px; color: var(--crimson); text-decoration: none; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; letter-spacing: 2px; color: var(--crimson); text-decoration: none; }
     .nav-logo .logo-d { color: var(--green); }
     .nav-logo .logo-ain { color: var(--crimson); }
     .nav-links { display: flex; list-style: none; gap: 40px; }
@@ -35,6 +35,21 @@
     .nav-links a:hover { color: var(--crimson); }
     .nav-btn { background: var(--black); color: var(--cream); border: none; padding: 12px 28px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background .3s; text-decoration: none; display: inline-block; }
     .nav-btn:hover { background: var(--crimson); }
+
+    /* Language switcher */
+    .lang-switch { position: relative; }
+    .lang-btn { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px solid rgba(26,26,26,0.2); padding: 9px 14px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; color: var(--black); cursor: pointer; transition: border-color .3s, background .3s; border-radius: 2px; }
+    .lang-btn:hover { border-color: var(--black); background: rgba(26,26,26,0.04); }
+    .lang-globe { font-size: 14px; line-height: 1; }
+    .lang-current { letter-spacing: 1.5px; }
+    .lang-arrow { font-size: 10px; opacity: 0.6; transition: transform .3s; }
+    .lang-switch.open .lang-arrow { transform: rotate(180deg); }
+    .lang-menu { position: absolute; top: calc(100% + 8px); right: 0; min-width: 160px; background: #fff; list-style: none; padding: 6px 0; margin: 0; border: 1px solid rgba(26,26,26,0.08); box-shadow: 0 12px 32px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .25s, transform .25s, visibility .25s; z-index: 110; }
+    .lang-switch.open .lang-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .lang-menu li { margin: 0; }
+    .lang-menu button { width: 100%; text-align: left; background: transparent; border: none; padding: 10px 18px; font-family: 'Montserrat', sans-serif; font-size: 12px; color: var(--black); cursor: pointer; transition: background .2s; letter-spacing: 0.3px; display: flex; align-items: center; gap: 12px; }
+    .lang-menu button:hover { background: rgba(26,26,26,0.05); color: var(--crimson); }
+    .lang-flag { font-size: 16px; line-height: 1; flex-shrink: 0; }
 
     /* Hamburger button (hidden on desktop) */
     .nav-toggle { display: none; background: transparent; border: none; cursor: pointer; padding: 8px; }
@@ -112,15 +127,81 @@
     #testimonials { padding: 100px 60px; background: var(--green); }
     #testimonials .section-title { color: var(--cream); }
     #testimonials .section-tag { color: var(--gold); }
-    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin-top: 60px; }
-    .testi-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 40px 32px; transition: background .3s; }
+    .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .testi-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); transition: background .3s; overflow: hidden; display: flex; flex-direction: column; }
     .testi-card:hover { background: rgba(255,255,255,0.1); }
-    .testi-stars { color: var(--gold); font-size: 18px; margin-bottom: 20px; }
-    .testi-text { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 28px; font-style: italic; }
-    .testi-author { display: flex; align-items: center; gap: 14px; }
-    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--crimson); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .testi-name { font-size: 13px; font-weight: 600; color: var(--cream); }
-    .testi-verified { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 1px; margin-top: 2px; }
+    .testi-photo { width: 100%; height: 220px; object-fit: cover; object-position: center; display: block; }
+    .testi-body { padding: 28px 30px 30px; flex: 1; display: flex; flex-direction: column; }
+    .testi-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .testi-stars { color: var(--gold); font-size: 15px; letter-spacing: 1px; }
+    .testi-best { font-size: 9px; letter-spacing: 1.5px; font-weight: 700; color: var(--green); background: var(--gold); padding: 3px 8px; border-radius: 2px; }
+    .testi-text { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.78); margin-bottom: 22px; font-style: italic; flex: 1; }
+    .testi-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .testi-author-info { display: flex; flex-direction: column; gap: 3px; }
+    .testi-name { font-size: 12px; font-weight: 600; color: var(--cream); letter-spacing: 0.5px; }
+    .testi-verified { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; }
+    .testi-date { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+
+    /* ===== ABOUT ===== */
+    #about { padding: 120px 60px; background: var(--green); position: relative; overflow: hidden; }
+    #about::before { content: ''; position: absolute; top: 30px; left: 8%; width: 1px; height: 60px; background: rgba(201,169,110,0.4); }
+    #about::after { content: ''; position: absolute; bottom: 30px; right: 8%; width: 1px; height: 60px; background: rgba(201,169,110,0.4); }
+    .about-wrap { max-width: 1100px; margin: 0 auto; position: relative; }
+    .about-section-head { text-align: center; margin-bottom: 40px; }
+    .about-section-tag { font-size: 14px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 0; font-weight: 600; }
+    .about-section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--cream); line-height: 1.15; }
+    .about-section-title em { font-style: italic; font-weight: 400; color: var(--gold); font-size: 1.1em; }
+    .about-divider { width: 40px; height: 1px; background: rgba(201,169,110,0.5); margin: 50px auto; }
+    .about-header { text-align: center; margin-bottom: 100px; }
+    .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.8vw, 52px); font-weight: 300; line-height: 1.4; color: var(--cream); max-width: 920px; margin: 0 auto 28px; font-style: italic; letter-spacing: 0.3px; }
+    .about-quote em { font-style: italic; color: var(--gold); font-weight: 400; }
+    .about-attribution { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 500; opacity: 0.85; }
+
+    .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 0 20px; }
+    .about-block { position: relative; text-align: center; min-height: 320px; }
+    .about-block::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); margin: 0 auto 32px; opacity: 0.6; }
+    .about-label { font-size: 15px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0; opacity: 0.95; }
+    .about-words { position: relative; height: 240px; margin-top: 20px; }
+    .about-word { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.2; position: absolute; white-space: nowrap; transition: color .4s; }
+
+    /* Block 1 — WHO WE ARE */
+    .about-block:nth-child(1) .about-word:nth-child(1) { top: 10px;  left: 18%; font-size: 30px; color: var(--cream); animation: float-a 7s ease-in-out infinite; }
+    .about-block:nth-child(1) .about-word:nth-child(2) { top: 90px;  left: 38%; font-size: 26px; color: rgba(250,246,240,0.72); animation: float-b 8s ease-in-out infinite; }
+    .about-block:nth-child(1) .about-word:nth-child(3) { top: 170px; left: 10%; font-size: 28px; color: rgba(250,246,240,0.55); animation: float-c 9s ease-in-out infinite; }
+
+    /* Block 2 — WHAT WE PURSUE */
+    .about-block:nth-child(2) .about-word:nth-child(1) { top: 20px;  left: 40%; font-size: 28px; color: var(--cream); animation: float-c 8s ease-in-out infinite; }
+    .about-block:nth-child(2) .about-word:nth-child(2) { top: 95px;  left: 12%; font-size: 30px; color: rgba(250,246,240,0.75); animation: float-a 9s ease-in-out infinite; }
+    .about-block:nth-child(2) .about-word:nth-child(3) { top: 175px; left: 45%; font-size: 26px; color: rgba(250,246,240,0.55); animation: float-b 7s ease-in-out infinite; }
+
+    /* Block 3 — OUR VISION */
+    .about-block:nth-child(3) .about-word:nth-child(1) { top: 5px;   left: 8%;  font-size: 28px; color: var(--cream); animation: float-b 9s ease-in-out infinite; }
+    .about-block:nth-child(3) .about-word:nth-child(2) { top: 85px;  left: 48%; font-size: 26px; color: rgba(250,246,240,0.72); animation: float-c 7s ease-in-out infinite; }
+    .about-block:nth-child(3) .about-word:nth-child(3) { top: 170px; left: 22%; font-size: 30px; color: rgba(250,246,240,0.6);  animation: float-a 8s ease-in-out infinite; }
+
+    /* Block 4 — OUR MESSAGE */
+    .about-block:nth-child(4) .about-word:nth-child(1) { top: 15px;  left: 22%; font-size: 30px; color: var(--cream); animation: float-c 7s ease-in-out infinite; }
+    .about-block:nth-child(4) .about-word:nth-child(2) { top: 90px;  left: 5%;  font-size: 26px; color: rgba(250,246,240,0.75); animation: float-a 9s ease-in-out infinite; }
+    .about-block:nth-child(4) .about-word:nth-child(3) { top: 175px; left: 30%; font-size: 28px; color: rgba(250,246,240,0.55); animation: float-b 8s ease-in-out infinite; }
+
+    .about-word:hover { color: var(--gold); }
+
+    /* Floating keyframes - subtle 2-axis drift */
+    @keyframes float-a {
+      0%, 100% { transform: translate(0, 0); }
+      50%      { transform: translate(8px, -6px); }
+    }
+    @keyframes float-b {
+      0%, 100% { transform: translate(0, 0); }
+      50%      { transform: translate(-7px, 8px); }
+    }
+    @keyframes float-c {
+      0%, 100% { transform: translate(0, 0); }
+      50%      { transform: translate(5px, 10px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .about-word { animation: none !important; }
+    }
 
     /* ===== BRANDS ===== */
     #brands { background: var(--black); padding: 60px; display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -153,6 +234,8 @@
       #hero { padding: 120px 30px 60px; gap: 40px; }
       #stats { padding: 40px 30px; }
       #why, #product, #categories, #testimonials { padding: 80px 30px; }
+      #about { padding: 90px 30px; }
+      .about-grid { gap: 30px; }
       #product { gap: 50px; }
       .why-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       .cat-grid { grid-template-columns: repeat(3, 1fr); }
@@ -167,9 +250,13 @@
     @media (max-width: 768px) {
       /* Nav: hamburger menu */
       nav { padding: 16px 20px; flex-wrap: wrap; }
-      .nav-logo { font-size: 22px; letter-spacing: 3px; }
+      .nav-logo { font-size: 30px; letter-spacing: 3px; }
       .nav-toggle { display: block; order: 3; }
       .nav-btn { padding: 10px 18px; font-size: 10px; order: 2; }
+      .lang-switch { order: 2; }
+      .lang-btn { padding: 7px 10px; font-size: 10px; gap: 6px; }
+      .lang-menu { right: 0; min-width: 150px; }
+      .lang-menu button { padding: 12px 16px; font-size: 13px; }
       .nav-links {
         display: none;
         width: 100%;
@@ -247,7 +334,33 @@
 
       /* Testimonials: stack */
       .testi-grid { grid-template-columns: 1fr; gap: 20px; }
-      .testi-card { padding: 30px 24px; }
+      .testi-photo { height: 200px; }
+      .testi-body { padding: 22px 22px 24px; }
+      .testi-text { font-size: 13px; }
+
+      /* About: stack */
+      #about { padding: 80px 20px; }
+      .about-section-head { margin-bottom: 40px; }
+      .about-section-tag { font-size: 11px; letter-spacing: 3px; }
+      .about-divider { margin: 35px auto; }
+      .about-header { margin-bottom: 60px; }
+      .about-quote { font-size: 24px; }
+      .about-grid { grid-template-columns: repeat(2, 1fr); gap: 50px 20px; padding: 0; }
+      .about-block { min-height: auto; }
+      .about-block::before { margin-bottom: 20px; }
+      .about-label { font-size: 12px; letter-spacing: 3px; margin-bottom: 24px; }
+      /* On mobile, drop absolute scatter — go back to centered stack */
+      .about-words { position: static; height: auto; display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 0; }
+      .about-block .about-word,
+      .about-block:nth-child(n) .about-word:nth-child(n) {
+        position: static !important;
+        font-size: 22px !important;
+        top: auto !important; left: auto !important;
+        animation: none !important;
+      }
+      .about-block .about-word:nth-child(1) { color: var(--cream) !important; }
+      .about-block .about-word:nth-child(2) { color: rgba(250,246,240,0.7) !important; }
+      .about-block .about-word:nth-child(3) { color: rgba(250,246,240,0.5) !important; }
 
       /* Brands: smaller gap */
       #brands { padding: 40px 20px; gap: 24px; }
@@ -272,7 +385,7 @@
        ========================================= */
     @media (max-width: 380px) {
       .hero-title { font-size: 38px; }
-      .nav-logo { font-size: 20px; }
+      .nav-logo { font-size: 26px; }
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-secondary { width: 100%; }
       .stat-num { font-size: 34px; }
@@ -282,17 +395,31 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#"><span class="logo-d">D:</span><span class="logo-ain">ain</span></a>
+  <a class="nav-logo" href="#"><span class="logo-d">D:</span><span class="logo-ain">AIN</span></a>
   <button class="nav-toggle" aria-label="Open menu" id="navToggle">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#why">About</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#product">Product</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#categories">Range</a></li>
   </ul>
-  <a href="https://smartstore.naver.com/dain_kr/category/ALL?cp=1" class="nav-btn" target="_blank" rel="noopener">Shop Now</a>
+  <div class="lang-switch" id="langSwitch">
+    <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+      <span class="lang-globe">🌐</span>
+      <span class="lang-current">EN</span>
+      <span class="lang-arrow">▾</span>
+    </button>
+    <ul class="lang-menu" id="langMenu" role="menu">
+      <li><button type="button" data-lang="en"><span class="lang-flag">🌐</span>English</button></li>
+      <li><button type="button" data-lang="ko"><span class="lang-flag">🇰🇷</span>한국어</button></li>
+      <li><button type="button" data-lang="zh"><span class="lang-flag">🇨🇳</span>中文</button></li>
+      <li><button type="button" data-lang="ja"><span class="lang-flag">🇯🇵</span>日本語</button></li>
+      <li><button type="button" data-lang="th"><span class="lang-flag">🇹🇭</span>ภาษาไทย</button></li>
+      <li><button type="button" data-lang="vi"><span class="lang-flag">🇻🇳</span>Tiếng Việt</button></li>
+    </ul>
+  </div>
 </nav>
 
 <section id="hero">
@@ -307,7 +434,7 @@
     </div>
   </div>
   <div class="hero-visual">
-    <img src="images/product-hero.jpg" alt="D:ain 3 Key Ingredients" class="hero-product-img">
+    <img src="images/product-hero.jpg" alt="D:AIN 3 Key Ingredients" class="hero-product-img">
   </div>
 </section>
 
@@ -366,7 +493,7 @@
 
 <section id="product">
   <div class="product-visual">
-    <img src="images/cushion-product.jpg" alt="D:ain Calming Blur Cushion product photo" class="product-photo">
+    <img src="images/cushion-product.jpg" alt="D:AIN Calming Blur Cushion product photo" class="product-photo">
   </div>
   <div class="product-info">
     <div class="section-tag">Signature Product</div>
@@ -390,9 +517,79 @@
     <h2 class="section-title">What Our Customers <em>Say</em></h2>
   </div>
   <div class="testi-grid">
-    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"My sensitive skin has never felt so calm after wearing a cushion. It covers without clogging — absolutely love it."</p><div class="testi-author"><div class="testi-avatar">J</div><div><div class="testi-name">Jiyeon K.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
-    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The blur effect is real! My pores completely disappear and it stays fresh all day even in humidity."</p><div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Soomin P.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
-    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"SPF 50+ in a cushion that actually feels light? D:ain figured it out. This is my everyday essential."</p><div class="testi-author"><div class="testi-avatar">H</div><div><div class="testi-name">Hyuna L.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
+
+    <div class="testi-card">
+      <img src="images/review-muns.jpg" alt="Customer review photo" class="testi-photo">
+      <div class="testi-body">
+        <div class="testi-head">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-best">BEST</span>
+        </div>
+        <p class="testi-text">"What I check most when buying a cushion is whether it darkens or cakes up. With D:AIN, there was zero darkening and no caking at all — even after a long day."</p>
+        <div class="testi-meta">
+          <div class="testi-author-info">
+            <span class="testi-name">muns***</span>
+            <span class="testi-verified">Verified Buyer</span>
+          </div>
+          <span class="testi-date">26.04.16</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <img src="images/review-moni.jpg" alt="Customer review photo" class="testi-photo">
+      <div class="testi-body">
+        <div class="testi-head">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-best">BEST</span>
+        </div>
+        <p class="testi-text">"I have dry-combination skin with redness and post-acne marks. As a usual #17, this one runs slightly darker on me — anyone up to a #19 should wear it comfortably."</p>
+        <div class="testi-meta">
+          <div class="testi-author-info">
+            <span class="testi-name">moni***</span>
+            <span class="testi-verified">Verified Buyer</span>
+          </div>
+          <span class="testi-date">26.02.22</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <img src="images/review-myji.jpg" alt="Customer review photo" class="testi-photo">
+      <div class="testi-body">
+        <div class="testi-head">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-best">BEST</span>
+        </div>
+        <p class="testi-text">"I rarely leave reviews, but I used this every day for a week to give a fair one — the coverage is genuinely great. Brighter than other #21s; feels closer to a #19."</p>
+        <div class="testi-meta">
+          <div class="testi-author-info">
+            <span class="testi-name">myji***</span>
+            <span class="testi-verified">Verified Buyer</span>
+          </div>
+          <span class="testi-date">26.03.16</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <img src="images/review-chae.jpg" alt="Customer review photo" class="testi-photo">
+      <div class="testi-body">
+        <div class="testi-head">
+          <span class="testi-stars">★★★★★</span>
+          <span class="testi-best">BEST</span>
+        </div>
+        <p class="testi-text">"Acne, sensitive skin, redness, texture — I have it all. Coverage matters to me, and this one covers what needs covering without ever feeling thick. Makes my skin look good as-is."</p>
+        <div class="testi-meta">
+          <div class="testi-author-info">
+            <span class="testi-name">chae***</span>
+            <span class="testi-verified">Verified Buyer</span>
+          </div>
+          <span class="testi-date">26.01.01</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -407,6 +604,62 @@
     <div class="cat-card"><div class="cat-icon">🌸</div><div class="cat-name">Toner</div><div class="cat-desc">Calm &amp; Balance</div></div>
     <div class="cat-card"><div class="cat-icon">🧴</div><div class="cat-name">Moisturizer</div><div class="cat-desc">Barrier Repair</div></div>
     <div class="cat-card"><div class="cat-icon">🌙</div><div class="cat-name">Night Care</div><div class="cat-desc">Overnight Glow</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-wrap">
+
+    <div class="about-section-head">
+      <div class="about-section-tag">About D:AIN</div>
+    </div>
+
+    <div class="about-divider"></div>
+
+    <div class="about-header">
+      <p class="about-quote">Beauty begins the moment you decide to <em>be yourself</em></p>
+      <div class="about-attribution">— Coco Chanel —</div>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-block">
+        <div class="about-label">Who We Are</div>
+        <div class="about-words">
+          <span class="about-word">calm.</span>
+          <span class="about-word">honest.</span>
+          <span class="about-word">together.</span>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-label">What We Pursue</div>
+        <div class="about-words">
+          <span class="about-word">essence.</span>
+          <span class="about-word">clarity.</span>
+          <span class="about-word">care.</span>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-label">Our Vision</div>
+        <div class="about-words">
+          <span class="about-word">confident.</span>
+          <span class="about-word">global.</span>
+          <span class="about-word">forward.</span>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <div class="about-label">Our Message</div>
+        <div class="about-words">
+          <span class="about-word">listen.</span>
+          <span class="about-word">trust.</span>
+          <span class="about-word">show up.</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -447,6 +700,30 @@
     a.addEventListener('click', () => {
       toggle.classList.remove('active');
       links.classList.remove('open');
+    });
+  });
+
+  // Language switcher - dropdown open/close (no actual language change)
+  const langSwitch = document.getElementById('langSwitch');
+  const langBtn = document.getElementById('langBtn');
+  const langMenu = document.getElementById('langMenu');
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = langSwitch.classList.toggle('open');
+    langBtn.setAttribute('aria-expanded', isOpen);
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!langSwitch.contains(e.target)) {
+      langSwitch.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  // Language option click - just close dropdown, do nothing
+  langMenu.querySelectorAll('button').forEach(b => {
+    b.addEventListener('click', () => {
+      langSwitch.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
