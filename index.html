@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAINCOS – Calming Blur Cushion</title>
+  <title>D:ain – Calming Blur Cushion</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -27,8 +27,9 @@
 
     /* ===== NAV ===== */
     nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(250,246,240,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(26,26,26,0.06); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; letter-spacing: 4px; color: var(--black); text-decoration: none; }
-    .nav-logo span { color: var(--crimson); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; letter-spacing: 2px; color: var(--crimson); text-decoration: none; }
+    .nav-logo .logo-d { color: var(--green); }
+    .nav-logo .logo-ain { color: var(--crimson); }
     .nav-links { display: flex; list-style: none; gap: 40px; }
     .nav-links a { text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--black); transition: color .3s; }
     .nav-links a:hover { color: var(--crimson); }
@@ -45,11 +46,10 @@
     /* ===== HERO ===== */
     #hero { min-height: 100vh; padding: 140px 60px 80px; background: linear-gradient(135deg, var(--cream) 60%, var(--beige) 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .hero-label { font-size: 11px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--crimson); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .hero-label::before { content: ''; display: inline-block; width: 40px; height: 1px; background: var(--crimson); }
     .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 86px); font-weight: 300; line-height: 1.05; color: var(--black); margin-bottom: 28px; }
     .hero-title strong { font-weight: 700; color: var(--green); }
     .hero-desc { font-size: 14px; line-height: 1.9; color: var(--gray); max-width: 400px; margin-bottom: 16px; }
-    .hero-spf { font-size: 11px; letter-spacing: 3px; color: var(--black); opacity: 0.4; display: block; margin-bottom: 36px; text-transform: uppercase; }
+    .hero-spf { font-size: 11px; letter-spacing: 3px; color: var(--green); display: block; margin-bottom: 36px; text-transform: uppercase; font-weight: 600; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
     .btn-primary { background: var(--crimson); color: #fff; border: none; padding: 16px 40px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-block; }
     .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
@@ -60,30 +60,35 @@
     .hero-product-img { width: 100%; max-width: 520px; height: auto; border-radius: 2px; object-fit: cover; }
 
     /* ===== STATS ===== */
-    #stats { background: var(--green); display: grid; grid-template-columns: repeat(4,1fr); padding: 60px; }
-    .stat-item { text-align: center; border-right: 1px solid rgba(255,255,255,0.15); padding: 20px; }
+    #stats { background: var(--green); display: grid; grid-template-columns: repeat(5,1fr); padding: 60px 40px; }
+    .stat-item { text-align: center; border-right: 1px solid rgba(201,169,110,0.2); padding: 20px 12px; }
     .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--cream); }
-    .stat-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 8px; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--gold); }
+    .stat-label { font-size: 10px; letter-spacing: 2.5px; color: rgba(255,255,255,0.6); margin-top: 8px; font-weight: 500; text-transform: uppercase; }
 
     /* ===== WHY ===== */
     #why { padding: 100px 60px; background: var(--cream); }
     .section-header { text-align: center; margin-bottom: 70px; }
-    .section-tag { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--crimson); margin-bottom: 16px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--black); line-height: 1.1; }
-    .section-title em { font-style: italic; color: var(--crimson); }
-    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 50px; }
-    .why-card { text-align: center; padding: 50px 30px; border: 1px solid rgba(26,26,26,0.08); transition: transform .3s, box-shadow .3s; }
+    .section-tag { font-size: 14px; letter-spacing: 5px; text-transform: uppercase; color: var(--crimson); margin-bottom: 18px; font-weight: 600; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--black); line-height: 1.15; }
+    .section-title em { font-style: italic; font-weight: 400; color: var(--crimson); font-size: 1.1em; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+    .why-card { text-align: center; padding: 44px 28px; border: 1px solid rgba(26,26,26,0.08); transition: transform .3s, box-shadow .3s; background: #fff; }
     .why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(26,26,26,0.08); }
     .why-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 24px; }
-    .why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; margin-bottom: 12px; }
+    .why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+    .why-card .ko-sub { font-size: 10px; letter-spacing: 2px; color: var(--crimson); font-weight: 600; margin-bottom: 14px; text-transform: uppercase; }
     .why-card p { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
     /* ===== PRODUCT ===== */
     #product { padding: 100px 60px; background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .product-visual { display: flex; justify-content: center; }
+    .product-visual { display: flex; justify-content: center; align-items: center; }
+    .product-photo { width: 100%; max-width: 480px; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
     .product-box { width: 340px; height: 360px; background: linear-gradient(145deg, #2A2A2A, #1A1A1A); border: 1px solid rgba(201,169,110,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .product-name-big { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; letter-spacing: 4px; color: var(--cream); }
+    .product-name-big { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; letter-spacing: 2px; color: var(--cream); }
+    /* On dark product box, use brighter tints so D:ain reads clearly */
+    .product-name-big .logo-d { color: #6FA88A; }       /* lighter green */
+    .product-name-big .logo-ain { color: #D4607A; }     /* lighter crimson */
     .product-name-sub { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 8px; }
     .product-weight { margin-top: 20px; padding: 6px 18px; border: 1px solid var(--gold); color: var(--gold); font-size: 11px; letter-spacing: 2px; }
     .product-info .section-tag { text-align: left; color: var(--gold); }
@@ -149,7 +154,7 @@
       #stats { padding: 40px 30px; }
       #why, #product, #categories, #testimonials { padding: 80px 30px; }
       #product { gap: 50px; }
-      .why-grid { gap: 24px; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       .cat-grid { grid-template-columns: repeat(3, 1fr); }
       .testi-grid { grid-template-columns: 1fr 1fr; }
       footer { padding: 60px 30px 30px; }
@@ -200,25 +205,28 @@
       .hero-visual::after { display: none; }
       .hero-product-img { max-width: 100%; }
 
-      /* Stats: 2x2 */
+      /* Stats: 5 items in 2 cols */
       #stats {
         grid-template-columns: repeat(2, 1fr);
         padding: 40px 20px;
         gap: 0;
       }
-      .stat-item { padding: 24px 12px; }
-      .stat-item:nth-child(2) { border-right: none; }
-      .stat-item:nth-child(1), .stat-item:nth-child(2) {
-        border-bottom: 1px solid rgba(255,255,255,0.15);
-      }
+      .stat-item { padding: 24px 12px; border-right: 1px solid rgba(201,169,110,0.2); border-bottom: 1px solid rgba(201,169,110,0.15); }
+      .stat-item:nth-child(2n) { border-right: none; }
+      .stat-item:nth-child(5) { grid-column: 1 / -1; border-right: none; border-bottom: none; }
+      .stat-item:nth-child(4) { border-bottom: none; }
       .stat-num { font-size: 40px; }
-      .stat-label { font-size: 9px; }
+      .stat-label { font-size: 10px; }
 
-      /* Why: stack */
+      /* Why: 6 cards in 2 cols on mobile */
       #why, #categories, #testimonials { padding: 60px 20px; }
       .section-header { margin-bottom: 40px; }
-      .why-grid { grid-template-columns: 1fr; gap: 20px; }
-      .why-card { padding: 36px 24px; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .why-card { padding: 28px 16px; }
+      .why-card h3 { font-size: 17px; }
+      .why-card .ko-sub { font-size: 11px; }
+      .why-card p { font-size: 12px; line-height: 1.7; }
+      .why-icon { width: 48px; height: 48px; font-size: 20px; margin-bottom: 18px; }
 
       /* Product: stack */
       #product {
@@ -227,6 +235,7 @@
         gap: 40px;
       }
       .product-box { width: 100%; max-width: 320px; height: 320px; }
+      .product-photo { max-width: 100%; }
       .product-info .section-title { text-align: center; }
       .product-info .section-tag { text-align: center; }
       .product-desc { text-align: center; }
@@ -259,7 +268,7 @@
     }
 
     /* =========================================
-       SMALL PHONE (≤ 380px) - iPhone SE 등
+       SMALL PHONE (≤ 380px) - iPhone SE etc.
        ========================================= */
     @media (max-width: 380px) {
       .hero-title { font-size: 38px; }
@@ -273,15 +282,15 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">DAIN<span>COS</span></a>
+  <a class="nav-logo" href="#"><span class="logo-d">D:</span><span class="logo-ain">ain</span></a>
   <button class="nav-toggle" aria-label="Open menu" id="navToggle">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#why">About</a></li>
     <li><a href="#product">Product</a></li>
-    <li><a href="#categories">Range</a></li>
     <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#categories">Range</a></li>
   </ul>
   <a href="https://smartstore.naver.com/dain_kr/category/ALL?cp=1" class="nav-btn" target="_blank" rel="noopener">Shop Now</a>
 </nav>
@@ -298,50 +307,92 @@
     </div>
   </div>
   <div class="hero-visual">
-    <img src="images/product-hero.jpg" alt="DAINCOS 3 Key Ingredients" class="hero-product-img">
+    <img src="images/product-hero.jpg" alt="D:ain 3 Key Ingredients" class="hero-product-img">
   </div>
 </section>
 
 <section id="stats">
-  <div class="stat-item"><div class="stat-num">25K+</div><div class="stat-label">Happy Customers</div></div>
-  <div class="stat-item"><div class="stat-num">98%</div><div class="stat-label">Skin Satisfaction</div></div>
-  <div class="stat-item"><div class="stat-num">13g</div><div class="stat-label">Compact Formula</div></div>
-  <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-label">Average Rating</div></div>
+  <div class="stat-item"><div class="stat-num">2,000+</div><div class="stat-label">Fandom Co-Created</div></div>
+  <div class="stat-item"><div class="stat-num">Triple</div><div class="stat-label">Functional Certified</div></div>
+  <div class="stat-item"><div class="stat-num">70%</div><div class="stat-label">Repurchase Rate</div></div>
+  <div class="stat-item"><div class="stat-num">2 Months</div><div class="stat-label">Sold Out</div></div>
+  <div class="stat-item"><div class="stat-num">7.2%</div><div class="stat-label">Conversion Rate</div></div>
 </section>
 
 <section id="why">
   <div class="section-header">
     <div class="section-tag">Why D:AIN</div>
-    <h2 class="section-title">Beauty Rooted in Calm</h2>
+    <h2 class="section-title">Beauty Rooted in <em>Calm</em></h2>
   </div>
   <div class="why-grid">
-    <div class="why-card"><div class="why-icon">🌿</div><h3>Calming Botanicals</h3><p>Enriched with soothing plant extracts that reduce redness and calm sensitive skin on contact.</p></div>
-    <div class="why-card"><div class="why-icon">☀️</div><h3>High Sun Protection</h3><p>SPF 50+ PA++++ shields your skin from UVA and UVB rays without heavy or greasy residue.</p></div>
-    <div class="why-card"><div class="why-icon">✨</div><h3>Blur Perfecting Finish</h3><p>Micro-blur pigments softly diffuse light, creating a naturally flawless, pore-minimizing effect.</p></div>
+    <div class="why-card">
+      <div class="why-icon">🏅</div>
+      <h3>Triple Functional<br>Certification</h3>
+      <div class="ko-sub">KFDA Approved</div>
+      <p>Whitening, anti-wrinkle, and UV protection — a triple certification from Korea's FDA.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌿</div>
+      <h3>Houttuynia<br>Cordata</h3>
+      <div class="ko-sub">Balance & Care</div>
+      <p>A calming botanical that helps balance the skin and care for troubled areas.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💧</div>
+      <h3>Panthenol</h3>
+      <div class="ko-sub">Deep Hydration</div>
+      <p>Delivers deep moisture and strengthens the skin barrier for lasting comfort.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🍃</div>
+      <h3>Cica</h3>
+      <div class="ko-sub">Soothing Relief</div>
+      <p>Gently soothes irritation and helps calm even the most sensitive skin.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🛡️</div>
+      <h3>Hypoallergenic<br>Tested</h3>
+      <div class="ko-sub">Dermatologist Tested</div>
+      <p>Clinically tested for sensitive skin — a base you can wear with confidence.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">☀️</div>
+      <h3>SPF 50+<br>PA++++</h3>
+      <div class="ko-sub">High UV Protection</div>
+      <p>Shields skin from UVA and UVB rays, preventing premature aging and dark spots.</p>
+    </div>
   </div>
 </section>
 
 <section id="product">
   <div class="product-visual">
-    <div class="product-box">
-      <div class="product-name-big">DAINCOS</div>
-      <div class="product-name-sub">Calming Blur Cushion</div>
-      <div class="product-weight">13g · SPF50+ PA++++</div>
-    </div>
+    <img src="images/cushion-product.jpg" alt="D:ain Calming Blur Cushion product photo" class="product-photo">
   </div>
   <div class="product-info">
     <div class="section-tag">Signature Product</div>
     <h2 class="section-title">Calming <em>Blur</em><br>Cushion</h2>
-    <p class="product-desc">A lightweight, buildable cushion foundation that delivers a seamless blur-finish while actively calming the skin. Ideal for everyday wear — from no-makeup days to full coverage moments.</p>
+    <p class="product-desc">More than just coverage — a calming base that soothes your skin even as you wear it. A complex of Houttuynia Cordata, Panthenol, and Cica makes it gentle enough for daily use on sensitive skin.</p>
     <ul class="spec-list">
-      <li>Volume: 13g compact refillable cushion</li>
-      <li>Sun Protection: SPF 50+ PA++++</li>
-      <li>Finish: Natural blur with semi-matte glow</li>
-      <li>Skin Type: All skin types, sensitive-friendly</li>
-      <li>Key Ingredients: Calming botanical complex, hyaluronic acid</li>
-      <li>Free From: Parabens, mineral oil, artificial fragrance</li>
+      <li>Volume : 15g · Refillable cushion</li>
+      <li>Sun Protection : SPF 50+ / PA++++</li>
+      <li>Functional : Whitening · Anti-wrinkle · UV protection (KFDA triple certified)</li>
+      <li>Skin Type : All skin types, optimized for sensitive skin</li>
+      <li>Key Ingredients : Houttuynia · Panthenol · Cica · 8-type Hyaluronic Acid</li>
+      <li>Safety : Hypoallergenic tested for sensitive skin</li>
     </ul>
     <a href="https://smartstore.naver.com/dain_kr/products/12841224000" class="btn-primary" target="_blank" rel="noopener">Shop Now</a>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="section-header">
+    <div class="section-tag">Real Reviews</div>
+    <h2 class="section-title">What Our Customers <em>Say</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"My sensitive skin has never felt so calm after wearing a cushion. It covers without clogging — absolutely love it."</p><div class="testi-author"><div class="testi-avatar">J</div><div><div class="testi-name">Jiyeon K.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The blur effect is real! My pores completely disappear and it stays fresh all day even in humidity."</p><div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Soomin P.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
+    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"SPF 50+ in a cushion that actually feels light? D:ain figured it out. This is my everyday essential."</p><div class="testi-author"><div class="testi-avatar">H</div><div><div class="testi-name">Hyuna L.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
   </div>
 </section>
 
@@ -356,18 +407,6 @@
     <div class="cat-card"><div class="cat-icon">🌸</div><div class="cat-name">Toner</div><div class="cat-desc">Calm &amp; Balance</div></div>
     <div class="cat-card"><div class="cat-icon">🧴</div><div class="cat-name">Moisturizer</div><div class="cat-desc">Barrier Repair</div></div>
     <div class="cat-card"><div class="cat-icon">🌙</div><div class="cat-name">Night Care</div><div class="cat-desc">Overnight Glow</div></div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <div class="section-header">
-    <div class="section-tag">Real Reviews</div>
-    <h2 class="section-title">What Our Customers <em>Say</em></h2>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"My sensitive skin has never felt so calm after wearing a cushion. It covers without clogging — absolutely love it."</p><div class="testi-author"><div class="testi-avatar">J</div><div><div class="testi-name">Jiyeon K.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
-    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"The blur effect is real! My pores completely disappear and it stays fresh all day even in humidity."</p><div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Soomin P.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
-    <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"SPF 50+ in a cushion that actually feels light? DAINCOS figured it out. This is my everyday essential."</p><div class="testi-author"><div class="testi-avatar">H</div><div><div class="testi-name">Hyuna L.</div><div class="testi-verified">Verified Buyer</div></div></div></div>
   </div>
 </section>
 
