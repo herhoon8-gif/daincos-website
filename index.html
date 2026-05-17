@@ -250,11 +250,10 @@
        ========================================= */
     @media (max-width: 768px) {
       /* Nav: hamburger menu */
-      nav { padding: 16px 20px; flex-wrap: wrap; }
-      .nav-logo { font-size: 30px; letter-spacing: 3px; }
-      .nav-toggle { display: block; order: 3; }
-      .nav-btn { padding: 10px 18px; font-size: 10px; order: 2; }
-      .lang-switch { order: 2; }
+      nav { padding: 16px 20px; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+      .nav-toggle { display: block; order: 1; flex: 0 0 auto; }
+      .nav-logo { font-size: 30px; letter-spacing: 3px; order: 2; flex: 1 1 auto; text-align: center; }
+      .lang-switch { order: 3; flex: 0 0 auto; }
       .lang-btn { padding: 7px 10px; font-size: 10px; gap: 6px; }
       .lang-menu { right: 0; min-width: 150px; }
       .lang-menu button { padding: 12px 16px; font-size: 13px; }
@@ -330,6 +329,8 @@
 
       /* Categories: 2 columns */
       .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      /* If 5 items in 2 cols, last one is orphan - center it across both columns */
+      .cat-grid .cat-card:nth-child(5):last-child { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; width: 100%; }
       .cat-card { padding: 30px 14px; }
       .cat-icon { font-size: 26px; margin-bottom: 12px; }
 
