@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D:AIN – Calming Blur Cushion</title>
+  <title>디아인 (D:AIN) – 카밍 블러 쿠션</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -23,11 +23,11 @@
       --crimson: #8B1A2F; --green: #1E3A2F; --gold: #C9A96E; --gray: #6B6B6B;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; background-color: var(--cream); color: var(--black); }
+    body { font-family: 'Montserrat', 'Noto Sans KR', sans-serif; background-color: var(--cream); color: var(--black); }
 
     /* ===== NAV ===== */
     nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 22px 60px; background: rgba(250,246,240,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(26,26,26,0.06); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; letter-spacing: 2px; color: var(--crimson); text-decoration: none; }
+    .nav-logo { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 34px; font-weight: 700; letter-spacing: 2px; color: var(--crimson); text-decoration: none; }
     .nav-logo .logo-d { color: var(--green); }
     .nav-logo .logo-ain { color: var(--crimson); }
     .nav-links { display: flex; list-style: none; gap: 40px; }
@@ -41,6 +41,8 @@
     .lang-btn { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px solid rgba(26,26,26,0.2); padding: 9px 14px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.5px; color: var(--black); cursor: pointer; transition: border-color .3s, background .3s; border-radius: 2px; }
     .lang-btn:hover { border-color: var(--black); background: rgba(26,26,26,0.04); }
     .lang-globe { font-size: 14px; line-height: 1; }
+    .lang-flag-current { width: 20px; height: auto; flex-shrink: 0; display: inline-flex; align-items: center; }
+    .lang-flag-current svg { width: 20px; height: 13px; display: block; border: 1px solid rgba(26,26,26,0.08); border-radius: 2px; }
     .lang-current { letter-spacing: 1.5px; }
     .lang-arrow { font-size: 10px; opacity: 0.6; transition: transform .3s; }
     .lang-switch.open .lang-arrow { transform: rotate(180deg); }
@@ -62,14 +64,14 @@
     /* ===== HERO ===== */
     #hero { min-height: 100vh; padding: 140px 60px 80px; background: linear-gradient(135deg, var(--cream) 60%, var(--beige) 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .hero-label { font-size: 11px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--crimson); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px, 6vw, 86px); font-weight: 300; line-height: 1.05; color: var(--black); margin-bottom: 28px; }
+    .hero-title { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: clamp(42px, 6vw, 86px); font-weight: 300; line-height: 1.05; color: var(--black); margin-bottom: 28px; }
     .hero-title strong { font-weight: 700; color: var(--green); }
     .hero-desc { font-size: 14px; line-height: 1.9; color: var(--gray); max-width: 400px; margin-bottom: 16px; }
     .hero-spf { font-size: 11px; letter-spacing: 3px; color: var(--green); display: block; margin-bottom: 36px; text-transform: uppercase; font-weight: 600; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary { background: var(--crimson); color: #fff; border: none; padding: 16px 40px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-block; }
+    .btn-primary { background: var(--crimson); color: #fff; border: none; padding: 16px 40px; font-family: 'Montserrat', 'Noto Sans KR', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-block; }
     .btn-primary:hover { background: var(--green); transform: translateY(-2px); }
-    .btn-secondary { background: transparent; color: var(--black); border: 1px solid var(--black); padding: 16px 40px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-block; }
+    .btn-secondary { background: transparent; color: var(--black); border: 1px solid var(--black); padding: 16px 40px; font-family: 'Montserrat', 'Noto Sans KR', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-block; }
     .btn-secondary:hover { background: var(--black); color: var(--cream); }
     .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
     .hero-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 55%, var(--cream) 100%), linear-gradient(to bottom, var(--cream) 0%, transparent 10%, transparent 90%, var(--cream) 100%); pointer-events: none; }
@@ -79,20 +81,21 @@
     #stats { background: var(--green); display: grid; grid-template-columns: repeat(5,1fr); padding: 60px 40px; }
     .stat-item { text-align: center; border-right: 1px solid rgba(201,169,110,0.2); padding: 20px 12px; }
     .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--gold); }
-    .stat-label { font-size: 10px; letter-spacing: 2.5px; color: rgba(255,255,255,0.6); margin-top: 8px; font-weight: 500; text-transform: uppercase; }
+    .stat-num { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 52px; font-weight: 300; color: var(--gold); }
+    .stat-unit { font-family: 'Noto Sans KR', sans-serif; font-size: 22px; font-weight: 400; margin-left: 4px; vertical-align: middle; opacity: 0.85; }
+    .stat-label { font-size: 12px; letter-spacing: 1.5px; color: rgba(255,255,255,0.6); margin-top: 8px; font-weight: 500; }
 
     /* ===== WHY ===== */
     #why { padding: 100px 60px; background: var(--cream); }
     .section-header { text-align: center; margin-bottom: 70px; }
     .section-tag { font-size: 14px; letter-spacing: 5px; text-transform: uppercase; color: var(--crimson); margin-bottom: 18px; font-weight: 600; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--black); line-height: 1.15; }
+    .section-title { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--black); line-height: 1.15; }
     .section-title em { font-style: italic; font-weight: 400; color: var(--crimson); font-size: 1.1em; }
     .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
     .why-card { text-align: center; padding: 44px 28px; border: 1px solid rgba(26,26,26,0.08); transition: transform .3s, box-shadow .3s; background: #fff; }
     .why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(26,26,26,0.08); }
     .why-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 24px; }
-    .why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
+    .why-card h3 { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 22px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; }
     .why-card .ko-sub { font-size: 10px; letter-spacing: 2px; color: var(--crimson); font-weight: 600; margin-bottom: 14px; text-transform: uppercase; }
     .why-card p { font-size: 13px; line-height: 1.8; color: var(--gray); }
 
@@ -101,7 +104,7 @@
     .product-visual { display: flex; justify-content: center; align-items: center; }
     .product-photo { width: 100%; max-width: 480px; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
     .product-box { width: 340px; height: 360px; background: linear-gradient(145deg, #2A2A2A, #1A1A1A); border: 1px solid rgba(201,169,110,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .product-name-big { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; letter-spacing: 2px; color: var(--cream); }
+    .product-name-big { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 30px; font-weight: 700; letter-spacing: 2px; color: var(--cream); }
     /* On dark product box, use brighter tints so D:ain reads clearly */
     .product-name-big .logo-d { color: #6FA88A; }       /* lighter green */
     .product-name-big .logo-ain { color: #D4607A; }     /* lighter crimson */
@@ -121,7 +124,7 @@
     .cat-card { text-align: center; padding: 40px 20px; border: 1px solid rgba(26,26,26,0.08); transition: all .3s; cursor: pointer; }
     .cat-card:hover { border-color: var(--crimson); transform: translateY(-4px); }
     .cat-icon { font-size: 30px; margin-bottom: 16px; }
-    .cat-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .cat-name { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
     .cat-desc { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); }
 
     /* ===== TESTIMONIALS ===== */
@@ -140,7 +143,7 @@
     .testi-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1); }
     .testi-author-info { display: flex; flex-direction: column; gap: 3px; }
     .testi-name { font-size: 12px; font-weight: 600; color: var(--cream); letter-spacing: 0.5px; }
-    .testi-verified { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; }
+    .testi-verified { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; }
     .testi-date { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
 
     /* ===== ABOUT ===== */
@@ -150,12 +153,13 @@
     .about-wrap { max-width: 1100px; margin: 0 auto; position: relative; }
     .about-section-head { text-align: center; margin-bottom: 40px; }
     .about-section-tag { font-size: 14px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 0; font-weight: 600; }
-    .about-section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--cream); line-height: 1.15; }
+    .about-section-title { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 300; color: var(--cream); line-height: 1.15; }
     .about-section-title em { font-style: italic; font-weight: 400; color: var(--gold); font-size: 1.1em; }
     .about-divider { width: 40px; height: 1px; background: rgba(201,169,110,0.5); margin: 50px auto; }
     .about-header { text-align: center; margin-bottom: 100px; }
-    .about-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.8vw, 52px); font-weight: 300; line-height: 1.4; color: var(--cream); max-width: 920px; margin: 0 auto 28px; font-style: italic; letter-spacing: 0.3px; }
+    .about-quote { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: clamp(30px, 3.8vw, 52px); font-weight: 300; line-height: 1.4; color: var(--cream); max-width: 920px; margin: 0 auto 20px; font-style: italic; letter-spacing: 0.3px; }
     .about-quote em { font-style: italic; color: var(--gold); font-weight: 400; }
+    .about-quote-ko { font-family: 'Noto Serif KR', serif; font-size: clamp(14px, 1.3vw, 18px); font-weight: 300; line-height: 1.7; color: rgba(250,246,240,0.65); max-width: 720px; margin: 0 auto 24px; font-style: normal; letter-spacing: 0.3px; }
     .about-attribution { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 500; opacity: 0.85; }
 
     .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 0 20px; }
@@ -163,7 +167,7 @@
     .about-block::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); margin: 0 auto 32px; opacity: 0.6; }
     .about-label { font-size: 15px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0; opacity: 0.95; }
     .about-words { position: relative; height: 240px; margin-top: 20px; }
-    .about-word { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.2; position: absolute; white-space: nowrap; transition: color .4s; }
+    .about-word { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.2; position: absolute; white-space: nowrap; transition: color .4s; }
 
     /* Block 1 — WHO WE ARE */
     .about-block:nth-child(1) .about-word:nth-child(1) { top: 10px;  left: 18%; font-size: 30px; color: var(--cream); animation: float-a 7s ease-in-out infinite; }
@@ -206,7 +210,7 @@
 
     /* ===== BRANDS ===== */
     #brands { background: var(--black); padding: 60px; display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.06); }
-    .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; letter-spacing: 4px; color: rgba(255,255,255,0.2); text-transform: uppercase; transition: color .3s; text-align: center; cursor: default; }
+    .brand-name { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 20px; font-weight: 300; letter-spacing: 4px; color: rgba(255,255,255,0.2); text-transform: uppercase; transition: color .3s; text-align: center; cursor: default; }
     .brand-name:hover { color: var(--gold); }
     .brand-sub { display: block; font-size: 10px; letter-spacing: 2px; margin-top: 4px; color: rgba(255,255,255,0.12); }
     .brand-name:hover .brand-sub { color: rgba(201,169,110,0.6); }
@@ -214,10 +218,10 @@
     /* ===== FOOTER ===== */
     footer { background: var(--black); padding: 80px 60px 40px; border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; letter-spacing: 4px; color: var(--cream); margin-bottom: 20px; }
+    .footer-logo { font-family: 'Cormorant Garamond', 'Noto Serif KR', serif; font-size: 24px; font-weight: 700; letter-spacing: 4px; color: var(--cream); margin-bottom: 20px; }
     .footer-logo span { color: var(--crimson); }
     .footer-desc { font-size: 12px; line-height: 1.9; color: rgba(255,255,255,0.35); }
-    .footer-col h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .footer-col h4 { font-size: 12px; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
     .footer-col ul { list-style: none; }
     .footer-col li { margin-bottom: 12px; }
     .footer-col a { text-decoration: none; font-size: 12px; color: rgba(255,255,255,0.35); transition: color .3s; cursor: pointer; }
@@ -303,6 +307,7 @@
       .stat-item:nth-child(5) { grid-column: 1 / -1; border-right: none; border-bottom: none; }
       .stat-item:nth-child(4) { border-bottom: none; }
       .stat-num { font-size: 40px; }
+      .stat-unit { font-size: 17px; }
       .stat-label { font-size: 10px; }
 
       /* Why: 6 cards in 2 cols on mobile */
@@ -347,6 +352,7 @@
       .about-divider { margin: 35px auto; }
       .about-header { margin-bottom: 60px; }
       .about-quote { font-size: 24px; }
+      .about-quote-ko { font-size: 13px; }
       .about-grid { grid-template-columns: repeat(2, 1fr); gap: 50px 20px; padding: 0; }
       .about-block { min-height: auto; }
       .about-block::before { margin-bottom: 20px; }
@@ -397,8 +403,8 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#"><span class="logo-d">D:</span><span class="logo-ain">AIN</span></a>
-  <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+  <a class="nav-logo" href="./"><span class="logo-d">D:</span><span class="logo-ain">AIN</span></a>
+  <button class="nav-toggle" aria-label="메뉴 열기" id="navToggle">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
@@ -409,15 +415,15 @@
   </ul>
   <div class="lang-switch" id="langSwitch">
     <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
-      <span class="lang-globe">🌐</span>
-      <span class="lang-current">EN</span>
+      <span class="lang-flag-current"><svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" fill="#fff"/><g transform="translate(12 8)"><circle r="3.6" fill="#C60C30"/><path d="M-3.6 0 a3.6 3.6 0 0 1 7.2 0 a1.8 1.8 0 0 1 -3.6 0 a1.8 1.8 0 0 0 -3.6 0z" fill="#003478"/></g><g fill="#000"><g transform="translate(4 3) rotate(-30)"><rect x="-2" y="-0.3" width="4" height="0.6"/><rect x="-2" y="0.6" width="4" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/></g><g transform="translate(20 3) rotate(30)"><rect x="-2" y="-0.3" width="4" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/><rect x="-2" y="0.6" width="1.7" height="0.6"/><rect x="0.3" y="0.6" width="1.7" height="0.6"/></g><g transform="translate(4 13) rotate(30)"><rect x="-2" y="-0.3" width="1.7" height="0.6"/><rect x="0.3" y="-0.3" width="1.7" height="0.6"/><rect x="-2" y="0.6" width="4" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/></g><g transform="translate(20 13) rotate(-30)"><rect x="-2" y="-0.3" width="1.7" height="0.6"/><rect x="0.3" y="-0.3" width="1.7" height="0.6"/><rect x="-2" y="0.6" width="1.7" height="0.6"/><rect x="0.3" y="0.6" width="1.7" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/></g></g></svg></span>
+      <span class="lang-current">KO</span>
       <span class="lang-arrow">▾</span>
     </button>
     <ul class="lang-menu" id="langMenu" role="menu">
-      <li><a href="./" data-lang="en">
+      <li><a href="../" data-lang="en">
         <span class="lang-flag"><svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="7.5" fill="#fff" stroke="#1A3A8A" stroke-width="1"/><path d="M12 0.5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 1 0 0-15z M12 0.5v15 M4.5 8h15 M6.7 2.7l10.6 10.6 M17.3 2.7L6.7 13.3" stroke="#1A3A8A" stroke-width="0.8" fill="none"/></svg></span>English
       </a></li>
-      <li><a href="ko/" data-lang="ko">
+      <li><a href="./" data-lang="ko">
         <span class="lang-flag"><svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" fill="#fff"/><g transform="translate(12 8)"><circle r="3.6" fill="#C60C30"/><path d="M-3.6 0 a3.6 3.6 0 0 1 7.2 0 a1.8 1.8 0 0 1 -3.6 0 a1.8 1.8 0 0 0 -3.6 0z" fill="#003478"/></g><g fill="#000"><g transform="translate(4 3) rotate(-30)"><rect x="-2" y="-0.3" width="4" height="0.6"/><rect x="-2" y="0.6" width="4" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/></g><g transform="translate(20 3) rotate(30)"><rect x="-2" y="-0.3" width="4" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/><rect x="-2" y="0.6" width="1.7" height="0.6"/><rect x="0.3" y="0.6" width="1.7" height="0.6"/></g><g transform="translate(4 13) rotate(30)"><rect x="-2" y="-0.3" width="1.7" height="0.6"/><rect x="0.3" y="-0.3" width="1.7" height="0.6"/><rect x="-2" y="0.6" width="4" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/></g><g transform="translate(20 13) rotate(-30)"><rect x="-2" y="-0.3" width="1.7" height="0.6"/><rect x="0.3" y="-0.3" width="1.7" height="0.6"/><rect x="-2" y="0.6" width="1.7" height="0.6"/><rect x="0.3" y="0.6" width="1.7" height="0.6"/><rect x="-2" y="-1.2" width="4" height="0.6"/></g></g></svg></span>한국어
       </a></li>
       <li><button type="button" data-lang="zh">
@@ -428,7 +434,7 @@
       </button></li>
       <li><button type="button" data-lang="th">
         <span class="lang-flag"><svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" fill="#A51931"/><rect y="2.7" width="24" height="10.7" fill="#fff"/><rect y="5.3" width="24" height="5.3" fill="#2D2A4A"/></svg></span>ภาษาไทย
-      </button></li>
+      </a></li>
       <li><button type="button" data-lang="vi">
         <span class="lang-flag"><svg viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" fill="#DA251D"/><polygon points="12,3.5 13.1,6.9 16.7,6.9 13.8,9 14.9,12.5 12,10.4 9.1,12.5 10.2,9 7.3,6.9 10.9,6.9" fill="#FFFF00"/></svg></span>Tiếng Việt
       </button></li>
@@ -440,24 +446,24 @@
   <div class="hero-content">
     <div class="hero-label">New Collection 2025</div>
     <h1 class="hero-title">Calm.<br>Cover.<br><strong>Glow.</strong></h1>
-    <p class="hero-desc">Introducing the D:AIN Calming Blur Cushion — a featherlight formula that soothes, blurs, and shields your skin all day long. Science-backed serenity, beautifully worn.</p>
+    <p class="hero-desc">디아인 카밍 블러 쿠션 — 진정 · 블러 · 자외선 차단을 하나에 담은 깃털 같은 베이스. 과학이 증명한 카밍, 매일 가볍게.</p>
     <span class="hero-spf">SPF 50+ | PA++++</span>
     <div class="hero-actions">
-      <a href="https://smartstore.naver.com/dain_kr/category/ALL?cp=1" class="btn-primary" target="_blank" rel="noopener">Buy Now</a>
-      <a href="https://smartstore.naver.com/dain_kr/products/12841224000" class="btn-secondary" target="_blank" rel="noopener">View Details</a>
+      <a href="https://smartstore.naver.com/dain_kr/category/ALL?cp=1" class="btn-primary" target="_blank" rel="noopener">구매하기</a>
+      <a href="https://smartstore.naver.com/dain_kr/products/12841224000" class="btn-secondary" target="_blank" rel="noopener">자세히 보기</a>
     </div>
   </div>
   <div class="hero-visual">
-    <img src="images/product-hero.jpg" alt="D:AIN 3 Key Ingredients" class="hero-product-img">
+    <img src="../images/product-hero.jpg" alt="디아인 3가지 핵심 성분" class="hero-product-img">
   </div>
 </section>
 
 <section id="stats">
-  <div class="stat-item"><div class="stat-num">2,000+</div><div class="stat-label">Fandom Co-Created</div></div>
-  <div class="stat-item"><div class="stat-num">Triple</div><div class="stat-label">Functional Certified</div></div>
-  <div class="stat-item"><div class="stat-num">70%</div><div class="stat-label">Repurchase Rate</div></div>
-  <div class="stat-item"><div class="stat-num">2 Months</div><div class="stat-label">Sold Out</div></div>
-  <div class="stat-item"><div class="stat-num">7.2%</div><div class="stat-label">Conversion Rate</div></div>
+  <div class="stat-item"><div class="stat-num">2,000+</div><div class="stat-label">팬덤과 함께 만든</div></div>
+  <div class="stat-item"><div class="stat-num">3<span class="stat-unit">중</span></div><div class="stat-label">기능성 인증</div></div>
+  <div class="stat-item"><div class="stat-num">70%</div><div class="stat-label">재구매율</div></div>
+  <div class="stat-item"><div class="stat-num">2<span class="stat-unit">개월</span></div><div class="stat-label">완판</div></div>
+  <div class="stat-item"><div class="stat-num">7.2%</div><div class="stat-label">구매 전환율</div></div>
 </section>
 
 <section id="why">
@@ -470,58 +476,58 @@
       <div class="why-icon">🏅</div>
       <h3>Triple Functional<br>Certification</h3>
       <div class="ko-sub">KFDA Approved</div>
-      <p>Whitening, anti-wrinkle, and UV protection — a triple certification from Korea's FDA.</p>
+      <p>미백 · 주름개선 · 자외선차단 — 식약처가 인증한 트리플 기능성.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">🌿</div>
       <h3>Houttuynia<br>Cordata</h3>
-      <div class="ko-sub">Balance & Care</div>
-      <p>A calming botanical that helps balance the skin and care for troubled areas.</p>
+      <div class="ko-sub">Balance &amp; Care</div>
+      <p>피부 밸런스를 잡아주고 트러블 부위를 진정시키는 카밍 성분.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">💧</div>
       <h3>Panthenol</h3>
       <div class="ko-sub">Deep Hydration</div>
-      <p>Delivers deep moisture and strengthens the skin barrier for lasting comfort.</p>
+      <p>깊은 보습과 피부 장벽 강화로 촉촉함이 오래 지속됩니다.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">🍃</div>
       <h3>Cica</h3>
       <div class="ko-sub">Soothing Relief</div>
-      <p>Gently soothes irritation and helps calm even the most sensitive skin.</p>
+      <p>자극을 부드럽게 가라앉히고 민감 피부를 편안하게 케어합니다.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">🛡️</div>
       <h3>Hypoallergenic<br>Tested</h3>
       <div class="ko-sub">Dermatologist Tested</div>
-      <p>Clinically tested for sensitive skin — a base you can wear with confidence.</p>
+      <p>민감성 피부 무자극 임상을 완료해 안심하고 데일리로 사용할 수 있어요.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">☀️</div>
       <h3>SPF 50+<br>PA++++</h3>
       <div class="ko-sub">High UV Protection</div>
-      <p>Shields skin from UVA and UVB rays, preventing premature aging and dark spots.</p>
+      <p>UVA · UVB로부터 피부를 보호하고 노화와 색소침착을 예방합니다.</p>
     </div>
   </div>
 </section>
 
 <section id="product">
   <div class="product-visual">
-    <img src="images/cushion-product.jpg" alt="D:AIN Calming Blur Cushion product photo" class="product-photo">
+    <img src="../images/cushion-product.jpg" alt="디아인 카밍 블러 쿠션 제품" class="product-photo">
   </div>
   <div class="product-info">
     <div class="section-tag">Signature Product</div>
     <h2 class="section-title">Calming <em>Blur</em><br>Cushion</h2>
-    <p class="product-desc">More than just coverage — a calming base that soothes your skin even as you wear it. A complex of Houttuynia Cordata, Panthenol, and Cica makes it gentle enough for daily use on sensitive skin.</p>
+    <p class="product-desc">단순한 커버를 넘어, 메이크업하는 동안에도 피부를 진정시키는 카밍 베이스. 어성초 · 판테놀 · 시카 복합 처방으로 민감한 피부에도 매일 안심하고 사용할 수 있어요.</p>
     <ul class="spec-list">
-      <li>Volume : 15g · Refillable cushion</li>
-      <li>Sun Protection : SPF 50+ / PA++++</li>
-      <li>Functional : Whitening · Anti-wrinkle · UV protection (KFDA triple certified)</li>
-      <li>Skin Type : All skin types, optimized for sensitive skin</li>
-      <li>Key Ingredients : Houttuynia · Panthenol · Cica · 8-type Hyaluronic Acid</li>
-      <li>Safety : Hypoallergenic tested for sensitive skin</li>
+      <li>용량 : 15g · 리필 가능 쿠션</li>
+      <li>자외선 차단 : SPF 50+ / PA++++</li>
+      <li>기능성 : 미백 · 주름개선 · 자외선차단 (식약처 3중 인증)</li>
+      <li>피부 타입 : 모든 피부, 민감성 피부 특화</li>
+      <li>핵심 성분 : 어성초 · 판테놀 · 시카 · 8종 히알루론산</li>
+      <li>안전성 : 민감성 피부 무자극 테스트 완료</li>
     </ul>
-    <a href="https://smartstore.naver.com/dain_kr/products/12841224000" class="btn-primary" target="_blank" rel="noopener">Shop Now</a>
+    <a href="https://smartstore.naver.com/dain_kr/products/12841224000" class="btn-primary" target="_blank" rel="noopener">구매하기</a>
   </div>
 </section>
 
@@ -533,17 +539,17 @@
   <div class="testi-grid">
 
     <div class="testi-card">
-      <img src="images/review-muns.jpg" alt="Customer review photo" class="testi-photo">
+      <img src="../images/review-muns.jpg" alt="Customer review photo" class="testi-photo">
       <div class="testi-body">
         <div class="testi-head">
           <span class="testi-stars">★★★★★</span>
           <span class="testi-best">BEST</span>
         </div>
-        <p class="testi-text">"What I check most when buying a cushion is whether it darkens or cakes up. With D:AIN, there was zero darkening and no caking at all — even after a long day."</p>
+        <p class="testi-text">"쿠션 살 때 가장 중요하게 보는 게 다크닝이랑 뜨는지인데, 디아인은 다크닝도 전혀 없고 뜨는 것도 없었어요. 기초만 잘해주면 정말 좋을 쿠션 같음."</p>
         <div class="testi-meta">
           <div class="testi-author-info">
             <span class="testi-name">muns***</span>
-            <span class="testi-verified">Verified Buyer</span>
+            <span class="testi-verified">실구매 후기</span>
           </div>
           <span class="testi-date">26.04.16</span>
         </div>
@@ -551,17 +557,17 @@
     </div>
 
     <div class="testi-card">
-      <img src="images/review-moni.jpg" alt="Customer review photo" class="testi-photo">
+      <img src="../images/review-moni.jpg" alt="Customer review photo" class="testi-photo">
       <div class="testi-body">
         <div class="testi-head">
           <span class="testi-stars">★★★★★</span>
           <span class="testi-best">BEST</span>
         </div>
-        <p class="testi-text">"I have dry-combination skin with redness and post-acne marks. As a usual #17, this one runs slightly darker on me — anyone up to a #19 should wear it comfortably."</p>
+        <p class="testi-text">"저는 17호 건복합성이고 홍조랑 트러블 흔적 많은 타입입니다. 시판 17호 쓰는 저에게는 살짝 어두웠어요. 19호까지는 무난하게 사용 가능하실 것 같습니다!"</p>
         <div class="testi-meta">
           <div class="testi-author-info">
             <span class="testi-name">moni***</span>
-            <span class="testi-verified">Verified Buyer</span>
+            <span class="testi-verified">실구매 후기</span>
           </div>
           <span class="testi-date">26.02.22</span>
         </div>
@@ -569,17 +575,17 @@
     </div>
 
     <div class="testi-card">
-      <img src="images/review-myji.jpg" alt="Customer review photo" class="testi-photo">
+      <img src="../images/review-myji.jpg" alt="Customer review photo" class="testi-photo">
       <div class="testi-body">
         <div class="testi-head">
           <span class="testi-stars">★★★★★</span>
           <span class="testi-best">BEST</span>
         </div>
-        <p class="testi-text">"I rarely leave reviews, but I used this every day for a week to give a fair one — the coverage is genuinely great. Brighter than other #21s; feels closer to a #19."</p>
+        <p class="testi-text">"리뷰 잘 안 남기는 1인입니다. 정확한 리뷰를 위해 일주일 간 매일 사용했어요. 결론부터 말하자면 커버가 잘 됩니다! 타사 21호보다 밝아서 체감상 19호 정도 되는 것 같습니다."</p>
         <div class="testi-meta">
           <div class="testi-author-info">
             <span class="testi-name">myji***</span>
-            <span class="testi-verified">Verified Buyer</span>
+            <span class="testi-verified">실구매 후기</span>
           </div>
           <span class="testi-date">26.03.16</span>
         </div>
@@ -587,17 +593,17 @@
     </div>
 
     <div class="testi-card">
-      <img src="images/review-chae.jpg" alt="Customer review photo" class="testi-photo">
+      <img src="../images/review-chae.jpg" alt="Customer review photo" class="testi-photo">
       <div class="testi-body">
         <div class="testi-head">
           <span class="testi-stars">★★★★★</span>
           <span class="testi-best">BEST</span>
         </div>
-        <p class="testi-text">"Acne, sensitive skin, redness, texture — I have it all. Coverage matters to me, and this one covers what needs covering without ever feeling thick. Makes my skin look good as-is."</p>
+        <p class="testi-text">"여드름 · 민감성 · 홍조 · 요철 다 가지고 있는 피부예요. 평소에도 가릴 게 많다 보니 커버력은 너무 중요. 두껍게 올라가지 않으면서 원래 피부가 좋아 보이게 커버해줘요."</p>
         <div class="testi-meta">
           <div class="testi-author-info">
             <span class="testi-name">chae***</span>
-            <span class="testi-verified">Verified Buyer</span>
+            <span class="testi-verified">실구매 후기</span>
           </div>
           <span class="testi-date">26.01.01</span>
         </div>
@@ -632,6 +638,7 @@
 
     <div class="about-header">
       <p class="about-quote">Beauty begins the moment you decide to <em>be yourself</em></p>
+      <p class="about-quote-ko">진정한 아름다움은 스스로를 있는 그대로 인정하고 사랑하는 순간 시작된다</p>
       <div class="about-attribution">— Coco Chanel —</div>
     </div>
 
@@ -689,11 +696,11 @@
   <div class="footer-grid">
     <div>
       <div class="footer-logo">DAIN<span>COS</span></div>
-      <p class="footer-desc">contact official@daincos.com</p>
+      <p class="footer-desc">문의 official@daincos.com</p>
     </div>
-    <div class="footer-col"><h4>Products</h4><ul><li><a>Calming Blur Cushion</a></li><li><a>Hydrating Serum</a></li><li><a>Calming Toner</a></li><li><a>Night Cream</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a>About Us</a></li><li><a>Ingredients</a></li><li><a>Press</a></li><li><a>Careers</a></li></ul></div>
-    <div class="footer-col"><h4>Support</h4><ul><li><a>FAQ</a></li><li><a>Shipping</a></li><li><a>Returns</a></li><li><a>Contact</a></li></ul></div>
+    <div class="footer-col"><h4>제품</h4><ul><li><a>카밍 블러 쿠션</a></li><li><a>카밍 미스트</a></li><li><a>카밍 세럼</a></li><li><a>카밍 썬블럭</a></li></ul></div>
+    <div class="footer-col"><h4>회사</h4><ul><li><a>브랜드 소개</a></li><li><a>성분 이야기</a></li><li><a>보도자료</a></li><li><a>채용</a></li></ul></div>
+    <div class="footer-col"><h4>고객지원</h4><ul><li><a>자주 묻는 질문</a></li><li><a>배송 안내</a></li><li><a>교환·반품</a></li><li><a>문의하기</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2025 DAINCOS. All rights reserved.</span>
