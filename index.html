@@ -3,7 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D:AIN – Calming Blur Cushion</title>
+
+  <!-- Auto language redirect: send Korean speakers to /ko/ (runs once per visit) -->
+  <script>
+    (function () {
+      try {
+        if (!sessionStorage.getItem('dain_lang_redirected')) {
+          sessionStorage.setItem('dain_lang_redirected', '1');
+          var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          if (lang.indexOf('ko') === 0) {
+            location.replace('/ko/');
+          }
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>D:AIN Calming Blur Cushion | Soothing K-Beauty Base SPF50+ | DAINCOS</title>
+  <meta name="description" content="D:AIN Calming Blur Cushion — a featherlight base with Houttuynia Cordata, Panthenol & Cica that soothes, blurs and shields sensitive skin. SPF 50+ PA++++, KFDA triple-functional certified K-beauty.">
+  <meta name="keywords" content="D:AIN, DAINCOS, K-beauty, calming cushion, blur cushion, sensitive skin cushion, SPF cushion, Houttuynia Cordata, Cica, Panthenol, Korean cosmetics">
+  <link rel="canonical" href="https://www.daincos.com/">
+
+  <!-- hreflang: tell Google which language version to serve -->
+  <link rel="alternate" hreflang="en" href="https://www.daincos.com/">
+  <link rel="alternate" hreflang="ko" href="https://www.daincos.com/ko/">
+  <link rel="alternate" hreflang="x-default" href="https://www.daincos.com/">
+
+  <!-- Open Graph: KakaoTalk / Facebook / Instagram link preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="D:AIN">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:title" content="D:AIN Calming Blur Cushion | Soothing K-Beauty Base">
+  <meta property="og:description" content="Soothes, blurs and shields sensitive skin. SPF 50+ PA++++, KFDA triple-functional certified. Science-backed serenity, beautifully worn.">
+  <meta property="og:url" content="https://www.daincos.com/">
+  <meta property="og:image" content="https://www.daincos.com/images/product-hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="D:AIN Calming Blur Cushion — 3 key ingredients">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="D:AIN Calming Blur Cushion | Soothing K-Beauty Base">
+  <meta name="twitter:description" content="Soothes, blurs and shields sensitive skin. SPF 50+ PA++++, KFDA triple-functional certified.">
+  <meta name="twitter:image" content="https://www.daincos.com/images/product-hero.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -225,6 +268,20 @@
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 30px; display: flex; justify-content: space-between; }
     .footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
 
+    /* ===== SOCIAL ===== */
+    .footer-social { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 44px; margin-bottom: 50px; }
+    .social-group { margin-bottom: 30px; }
+    .social-group:last-child { margin-bottom: 0; }
+    .social-group h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .social-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .social-link { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; padding: 10px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; transition: border-color .3s, background .3s, transform .3s; }
+    .social-link:hover { border-color: var(--gold); background: rgba(201,169,110,0.06); transform: translateY(-2px); }
+    .social-link svg { width: 17px; height: 17px; flex-shrink: 0; fill: rgba(255,255,255,0.7); transition: fill .3s; }
+    .social-link:hover svg { fill: var(--gold); }
+    .social-name { font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; transition: color .3s; }
+    .social-link:hover .social-name { color: var(--cream); }
+    .social-official { display: inline-block; font-size: 8px; letter-spacing: 1.5px; font-weight: 700; color: var(--green); background: var(--gold); padding: 2px 6px; border-radius: 2px; margin-left: 2px; text-transform: uppercase; }
+
 
     /* =========================================
        MOBILE RESPONSIVE — TABLET (≤ 1024px)
@@ -375,6 +432,9 @@
         gap: 30px 20px;
       }
       .footer-grid > div:first-child { grid-column: 1 / -1; }
+      .footer-social { padding-top: 36px; margin-bottom: 36px; }
+      .social-row { gap: 10px; }
+      .social-link { padding: 10px 14px; }
       .footer-bottom {
         flex-direction: column;
         gap: 8px;
@@ -694,6 +754,38 @@
     <div class="footer-col"><h4>Products</h4><ul><li><a>Calming Blur Cushion</a></li><li><a>Hydrating Serum</a></li><li><a>Calming Toner</a></li><li><a>Night Cream</a></li></ul></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a>About Us</a></li><li><a>Ingredients</a></li><li><a>Press</a></li><li><a>Careers</a></li></ul></div>
     <div class="footer-col"><h4>Support</h4><ul><li><a>FAQ</a></li><li><a>Shipping</a></li><li><a>Returns</a></li><li><a>Contact</a></li></ul></div>
+  </div>
+  <div class="footer-social">
+    <div class="social-group">
+      <h4>Official</h4>
+      <div class="social-row">
+        <a class="social-link" href="https://www.instagram.com/dain_kr" target="_blank" rel="noopener" aria-label="D:AIN official Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2zm0 1.95c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.33-.28.81-.32 1.71-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.04.9.19 1.38.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.33.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.33.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.33-.13-.81-.28-1.71-.32-1.24-.06-1.59-.07-4.74-.07zm0 3.32a4.53 4.53 0 1 1 0 9.06 4.53 4.53 0 0 1 0-9.06zm0 7.47a2.94 2.94 0 1 0 0-5.88 2.94 2.94 0 0 0 0 5.88zm5.77-7.69a1.06 1.06 0 1 1-2.12 0 1.06 1.06 0 0 1 2.12 0z"/></svg>
+          <span class="social-name">@dain_kr</span><span class="social-official">Official</span>
+        </a>
+      </div>
+    </div>
+    <div class="social-group">
+      <h4>Community · D:AINII</h4>
+      <div class="social-row">
+        <a class="social-link" href="https://www.instagram.com/imdainii" target="_blank" rel="noopener" aria-label="D:AINII Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2zm0 1.95c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.33-.28.81-.32 1.71-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.04.9.19 1.38.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.33.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.33.28-.81.32-1.71.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.33-.13-.81-.28-1.71-.32-1.24-.06-1.59-.07-4.74-.07zm0 3.32a4.53 4.53 0 1 1 0 9.06 4.53 4.53 0 0 1 0-9.06zm0 7.47a2.94 2.94 0 1 0 0-5.88 2.94 2.94 0 0 0 0 5.88zm5.77-7.69a1.06 1.06 0 1 1-2.12 0 1.06 1.06 0 0 1 2.12 0z"/></svg>
+          <span class="social-name">@imdainii</span>
+        </a>
+        <a class="social-link" href="https://www.youtube.com/@imdainii" target="_blank" rel="noopener" aria-label="D:AINII YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+          <span class="social-name">YouTube</span>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@imdainii" target="_blank" rel="noopener" aria-label="D:AINII TikTok">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.1v12.4a2.5 2.5 0 0 1-2.5 2.42 2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 3.3-2.37V7.78a5.6 5.6 0 0 0-.8-.06A5.6 5.6 0 0 0 4.35 13.3a5.6 5.6 0 0 0 5.6 5.6 5.6 5.6 0 0 0 5.6-5.6V8.9a7.3 7.3 0 0 0 4.3 1.38V7.18a4.28 4.28 0 0 1-3.25-1.36z"/></svg>
+          <span class="social-name">TikTok</span>
+        </a>
+        <a class="social-link" href="https://open.kakao.com/o/gk6tXeWf" target="_blank" rel="noopener" aria-label="D:AINII Open Chat">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.85 1.9 5.35 4.75 6.75-.2.7-.7 2.55-.8 2.95 0 0-.05.2.1.3.15.1.3 0 .3 0 .4-.05 3.05-2 3.6-2.4.65.1 1.35.15 2.05.15 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+          <span class="social-name">다인지존교</span>
+        </a>
+      </div>
+    </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2025 DAINCOS. All rights reserved.</span>
