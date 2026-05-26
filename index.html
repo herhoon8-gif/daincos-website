@@ -271,7 +271,8 @@
     /* ===== SOCIAL ===== */
     .footer-social { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 44px; margin-bottom: 50px; }
     .social-title { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--cream); margin-bottom: 28px; font-weight: 500; }
-    .social-group { margin-bottom: 30px; }
+    .social-groups { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px 56px; }
+    .social-group { margin-bottom: 0; }
     .social-group:last-child { margin-bottom: 0; }
     .social-group h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     .social-row { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -434,6 +435,7 @@
       }
       .footer-grid > div:first-child { grid-column: 1 / -1; }
       .footer-social { padding-top: 36px; margin-bottom: 36px; }
+      .social-groups { gap: 26px; }
       .social-row { gap: 10px; }
       .social-link { padding: 10px 14px; }
       .footer-bottom {
@@ -758,6 +760,7 @@
   </div>
   <div class="footer-social">
     <div class="social-title">Follow Us</div>
+    <div class="social-groups">
     <div class="social-group">
       <h4>Official</h4>
       <div class="social-row">
@@ -787,6 +790,7 @@
           <span class="social-name">다인지존교</span>
         </a>
       </div>
+    </div>
     </div>
   </div>
   <div class="footer-bottom">
